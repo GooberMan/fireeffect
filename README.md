@@ -22,4 +22,4 @@ Had to go digging in to the Qt source to get the render textures working correct
 
 I _should_ write a uniform wrapper really, but I don't plan on using OpenGL in the future so it's just writing code for the sake of writing code. Ended up quantizing more than I expected to get sliders to work nice, so a way to automate that and be friendly for the UI would go far if I use Qt again.
 
-Also considered writing a software implementation of the fire simulation. Rolling in a SIMD vector wouldn't be a big issue, but I'd also want to look at ways to do SIMT on the CPU. Probably end up realising there's not a great many options and just slicing up the workload as I normally do anyway (like in [Rum and Raisin Doom]((https://github.com/GooberMan/rum-and-raisin-doom/)).
+Also considered writing a software implementation of the fire simulation. Rolling in a SIMD vector wouldn't be a big issue, but I'd also want to look at ways to do SIMT on the CPU. Probably end up realising there's not a great many options and just slicing up the workload as I normally do anyway (like in [Rum and Raisin Doom](https://github.com/GooberMan/rum-and-raisin-doom/)).
