@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FireEffectWindow</class>
+ <widget class="QMainWindow" name="FireEffectWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1280</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Fire Effect</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="fireeffect.qrc">
+    <normaloff>:/icons/fireeffect.ico</normaloff>:/icons/fireeffect.ico</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <widget class="FireEffectView" name="centralwidget">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>320</width>
+     <height>240</height>
+    </size>
+   </property>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1280</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionExit"/>
+   </widget>
+   <addaction name="menuFile"/>
+  </widget>
+  <widget class="QDockWidget" name="settingsWidget">
+   <property name="minimumSize">
+    <size>
+     <width>250</width>
+     <height>383</height>
+    </size>
+   </property>
+   <property name="features">
+    <set>QDockWidget::DockWidgetFloatable|QDockWidget::DockWidgetMovable</set>
+   </property>
+   <property name="windowTitle">
+    <string>Settings</string>
+   </property>
+   <attribute name="dockWidgetArea">
+    <number>2</number>
+   </attribute>
+   <widget class="QWidget" name="dockWidgetContents">
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="updateLabel">
+       <property name="text">
+        <string>Update Rate (Hz)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QSlider" name="updateSlider">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>420</number>
+       </property>
+       <property name="singleStep">
+        <number>15</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+       <property name="tickPosition">
+        <enum>QSlider::NoTicks</enum>
+       </property>
+       <property name="tickInterval">
+        <number>0</number>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="detrateLabel">
+       <property name="text">
+        <string>Deterioration rate</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QSlider" name="detrateSlider">
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="detchanceLabel">
+       <property name="text">
+        <string>Deterioration chance</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QSlider" name="detchanceSlider">
+       <property name="maximum">
+        <number>50</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="windLabel">
+       <property name="text">
+        <string>Wind Strength</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QSlider" name="windSlider">
+       <property name="minimum">
+        <number>-1000</number>
+       </property>
+       <property name="maximum">
+        <number>1000</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="numcolLabel">
+       <property name="text">
+        <string>Number of colours</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QSlider" name="numcolSlider">
+       <property name="minimum">
+        <number>1</number>
+       </property>
+       <property name="maximum">
+        <number>9</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="col1Label">
+       <property name="text">
+        <string>Colour 1</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="ColorPicker" name="col1Picker" native="true"/>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="col2Label">
+       <property name="text">
+        <string>Colour 2</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="ColorPicker" name="col2Picker" native="true"/>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="col3Label">
+       <property name="text">
+        <string>Colour 3</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="ColorPicker" name="col3Picker" native="true"/>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="col4Label">
+       <property name="text">
+        <string>Colour 4</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="ColorPicker" name="col4Picker" native="true"/>
+     </item>
+     <item row="11" column="0">
+      <widget class="QLabel" name="col5Label">
+       <property name="text">
+        <string>Colour 5</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="ColorPicker" name="col5Picker" native="true"/>
+     </item>
+     <item row="12" column="0">
+      <widget class="QLabel" name="col6Label">
+       <property name="text">
+        <string>Colour 6</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="1">
+      <widget class="ColorPicker" name="col6Picker" native="true"/>
+     </item>
+     <item row="13" column="0">
+      <widget class="QLabel" name="col7Label">
+       <property name="text">
+        <string>Colour 7</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1">
+      <widget class="ColorPicker" name="col7Picker" native="true"/>
+     </item>
+     <item row="14" column="0">
+      <widget class="QLabel" name="col8Label">
+       <property name="text">
+        <string>Colour 8</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1">
+      <widget class="ColorPicker" name="col8Picker" native="true"/>
+     </item>
+     <item row="15" column="0">
+      <widget class="QLabel" name="col9Label">
+       <property name="text">
+        <string>Colour 9</string>
+       </property>
+      </widget>
+     </item>
+     <item row="15" column="1">
+      <widget class="ColorPicker" name="col9Picker" native="true"/>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="windcycLabel">
+       <property name="text">
+        <string>Wind Cycle Base</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QSlider" name="windcycSlider">
+       <property name="minimum">
+        <number>50</number>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="windcurveLabel">
+       <property name="text">
+        <string>Wind Curve Power</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="1">
+      <widget class="QSlider" name="windcurveSlider">
+       <property name="minimum">
+        <number>50</number>
+       </property>
+       <property name="maximum">
+        <number>300</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+  </widget>
+  <action name="actionSettings">
+   <property name="checkable">
+    <bool>true</bool>
+   </property>
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="text">
+    <string>E&amp;xit</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>FireEffectView</class>
+   <extends>QWidget</extends>
+   <header>fireeffectview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>ColorPicker</class>
+   <extends>QWidget</extends>
+   <header>colorpicker.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="fireeffect.qrc"/>
+ </resources>
+ <connections/>
+</ui>

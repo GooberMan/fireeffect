@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/icons">
+        <file>fireeffect.ico</file>
+    </qresource>
+    <qresource prefix="/shaders">
+        <file>basic.vsh</file>
+        <file>fireaccumulation.fsh</file>
+        <file>firerender.fsh</file>
+    </qresource>
+</RCC>
